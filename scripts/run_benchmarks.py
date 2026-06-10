@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from pathlib import Path
 import csv
-import shutil
 import subprocess
 import sys
+
+from toolchain import environment_for_tool, find_gcc
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,16 +28,24 @@ def run_python_benchmark() -> list[dict[str, str]]:
 
 
 def run_c_benchmark() -> list[dict[str, str]]:
-    if shutil.which("gcc") is None:
+    gcc = find_gcc()
+    if gcc is None:
         print("[AVISO] gcc nao encontrado. Benchmark em C foi pulado.")
         return []
 
     BUILD_DIR.mkdir(exist_ok=True)
     subprocess.run(
-        ["gcc", str(C_BENCHMARK), "-Wall", "-Wextra", "-std=c11", "-lm", "-o", str(C_EXECUTABLE)],
+        [gcc, str(C_BENCHMARK), "-Wall", "-Wextra", "-std=c11", "-lm", "-o", str(C_EXECUTABLE)],
         check=True,
+        env=environment_for_tool(gcc),
     )
-    result = subprocess.run([str(C_EXECUTABLE)], text=True, capture_output=True, check=True)
+    result = subprocess.run(
+        [str(C_EXECUTABLE)],
+        text=True,
+        capture_output=True,
+        check=True,
+        env=environment_for_tool(gcc),
+    )
     return list(csv.DictReader(result.stdout.splitlines()))
 
 

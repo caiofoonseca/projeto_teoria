@@ -67,17 +67,19 @@ Os experimentos devem ser executados com:
 
 ## 8. Ambiente de Execucao
 
-Preencher antes da entrega final:
+Ambiente usado na execucao dos experimentos registrados em `data/resultados.csv`:
 
-- Processador:
-- Memoria RAM:
-- Sistema operacional:
-- Versao do compilador C:
-- Versao do Python:
+- Processador: Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+- Nucleos logicos informados pelo sistema: 12
+- Memoria RAM: preencher manualmente no computador usado para a entrega final
+- Sistema operacional: Microsoft Windows 10.0.19045.6466
+- Compilador C: gcc.exe 16.1.0, MSYS2 UCRT64
+- Python: 3.14.0
+- Biblioteca de graficos: matplotlib 3.10.9
 
 ## 9. Resultados Experimentais
 
-Os resultados devem ser gerados com:
+Os resultados foram gerados com:
 
 ```bash
 python scripts/run_benchmarks.py
@@ -88,6 +90,31 @@ O arquivo gerado sera:
 ```text
 data/resultados.csv
 ```
+
+Resumo dos dados coletados:
+
+| Linguagem | Caso | Tamanho | Rodadas | Media (ms) | Desvio-padrao (ms) |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Python | melhor | 100 | 30 | 0.040343 | 0.009717 |
+| Python | medio | 100 | 30 | 0.051723 | 0.004462 |
+| Python | pior | 100 | 30 | 0.361187 | 0.035525 |
+| Python | melhor | 1000 | 30 | 0.643863 | 0.011291 |
+| Python | medio | 1000 | 30 | 0.979733 | 0.232886 |
+| Python | pior | 1000 | 30 | 37.844777 | 1.124157 |
+| Python | melhor | 3000 | 30 | 2.378267 | 0.112871 |
+| Python | medio | 3000 | 30 | 3.219307 | 0.235365 |
+| Python | pior | 3000 | 30 | 352.578220 | 9.665588 |
+| C | melhor | 100 | 30 | 0.001833 | 0.000130 |
+| C | medio | 100 | 30 | 0.006463 | 0.006439 |
+| C | pior | 100 | 30 | 0.021747 | 0.000411 |
+| C | melhor | 1000 | 30 | 0.027297 | 0.000234 |
+| C | medio | 1000 | 30 | 0.070773 | 0.001708 |
+| C | pior | 1000 | 30 | 2.507270 | 0.497418 |
+| C | melhor | 3000 | 30 | 0.114330 | 0.006240 |
+| C | medio | 3000 | 30 | 0.289300 | 0.010202 |
+| C | pior | 3000 | 30 | 21.690007 | 0.795643 |
+
+Os resultados mostram que a implementacao em C apresentou tempos menores em todos os cenarios. Tambem fica visivel que o pior caso cresce de forma muito mais acentuada, coerente com a complexidade O(n^2) da implementacao com pivo fixo no ultimo elemento.
 
 ## 10. Graficos
 
@@ -103,6 +130,11 @@ Os arquivos serao salvos em:
 plots/
 ```
 
+Graficos gerados:
+
+- `plots/quicksort_c.png`
+- `plots/quicksort_python.png`
+
 ## 11. Reflexao sobre Classe P e NP
 
 O problema de ordenacao pertence a classe P, pois existe algoritmo que resolve o problema em tempo polinomial. O Quick Sort, mesmo em seu pior caso, executa em O(n^2), que ainda e polinomial.
@@ -111,4 +143,4 @@ O problema de ordenacao nao e tratado como problema NP-completo. Problemas NP-co
 
 ## 12. Conclusao
 
-Preencher apos a execucao dos experimentos finais, comparando os tempos medidos em C e Python com a curva teorica esperada.
+Os experimentos confirmam a diferenca esperada entre as linguagens: C executa o algoritmo com menor sobrecarga, enquanto Python apresenta tempos maiores por ser interpretado e possuir maior custo por operacao. Ainda assim, ambas as implementacoes seguem o mesmo comportamento assintotico: melhor e caso medio proximos de n log n, e pior caso com crescimento quadratico.

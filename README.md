@@ -48,8 +48,8 @@ O projeto usa:
 | `docs/especificacao.md` | Resumo da especificacao completa do trabalho. |
 | `docs/checklist_avaliacao.md` | Checklist dos requisitos para nota maxima. |
 | `docs/relatorio.md` | Base do relatorio final. |
-| `data/` | Pasta para resultados experimentais em CSV. |
-| `plots/` | Pasta para graficos gerados. |
+| `data/resultados.csv` | Resultados experimentais coletados. |
+| `plots/` | Graficos gerados a partir dos resultados. |
 
 ## Formato de Entrada
 
@@ -125,6 +125,13 @@ python scripts/generate_plots.py
 ```
 
 Esse comando depende da biblioteca `matplotlib`.
+
+Os graficos gerados ficam em:
+
+```text
+plots/quicksort_c.png
+plots/quicksort_python.png
+```
 
 ## Observacao sobre Arquivos de Entrada e Saida
 

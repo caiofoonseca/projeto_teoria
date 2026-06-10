@@ -1,7 +1,8 @@
 from pathlib import Path
-import shutil
 import subprocess
 import sys
+
+from toolchain import environment_for_tool, find_gcc
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,13 +21,14 @@ TEST_CASES = [
 
 
 def compile_c_program() -> bool:
-    if shutil.which("gcc") is None:
+    gcc = find_gcc()
+    if gcc is None:
         print("[AVISO] gcc nao encontrado. Testes em C foram pulados.")
         return False
 
     BUILD_DIR.mkdir(exist_ok=True)
-    command = ["gcc", str(SOURCE_C), "-Wall", "-Wextra", "-std=c11", "-o", str(EXECUTABLE)]
-    subprocess.run(command, check=True)
+    command = [gcc, str(SOURCE_C), "-Wall", "-Wextra", "-std=c11", "-o", str(EXECUTABLE)]
+    subprocess.run(command, check=True, env=environment_for_tool(gcc))
     return True
 
 

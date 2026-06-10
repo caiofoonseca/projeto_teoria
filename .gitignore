@@ -3,5 +3,3 @@ build/
 *.o
 __pycache__/
 *.pyc
-data/resultados.csv
-plots/*.png
