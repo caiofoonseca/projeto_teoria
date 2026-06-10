@@ -80,7 +80,7 @@ mkdir build
 gcc src/c/quicksort.c -Wall -Wextra -std=c11 -o build/quicksort
 ```
 
-Execucao usando o exemplo:
+Execucao usando o exemplo em Bash, Git Bash ou MSYS2:
 
 ```bash
 ./build/quicksort < examples/entrada.txt
@@ -88,10 +88,22 @@ Execucao usando o exemplo:
 
 No Windows, o executavel pode ficar como `build/quicksort.exe`.
 
+Execucao usando o exemplo no PowerShell:
+
+```powershell
+Get-Content examples/entrada.txt | .\build\quicksort.exe
+```
+
 Execucao da versao em Python:
 
 ```bash
 python src/python/quicksort.py < examples/entrada.txt
+```
+
+No PowerShell, a versao Python tambem pode ser executada assim:
+
+```powershell
+Get-Content examples/entrada.txt | python src/python/quicksort.py
 ```
 
 ## Como Rodar os Testes
@@ -137,7 +149,19 @@ plots/quicksort_python.png
 
 A especificacao do projeto nao obriga, por si so, que o programa leia um arquivo chamado `entrada.txt` ou gere um arquivo chamado `saida.txt`.
 
-Neste repositorio, os arquivos em `examples/` servem como exemplos de execucao e validacao. O programa le pela entrada padrao, entao o usuario pode digitar os dados manualmente ou redirecionar um arquivo com `< examples/entrada.txt`.
+Neste repositorio, os arquivos em `examples/` servem como exemplos de execucao e validacao. O programa le pela entrada padrao, entao o usuario pode digitar os dados manualmente ou redirecionar um arquivo.
+
+Em Bash, Git Bash ou MSYS2:
+
+```bash
+./build/quicksort < examples/entrada.txt
+```
+
+Em PowerShell:
+
+```powershell
+Get-Content examples/entrada.txt | .\build\quicksort.exe
+```
 
 ## Proximos Passos
 
