@@ -9,15 +9,15 @@ Resumo da especificacao do projeto da disciplina de Teoria da Computacao.
 - Tema: Teoria da Complexidade e Analise de Tempo de Algoritmos
 - Algoritmo do grupo: Quick Sort
 - Linguagens escolhidas: C e Python
-- Entrega do projeto: 16/06/2026, as 23:59
-- Apresentacoes: 17/06/2026 e 22/06/2026
+- Entrega do projeto: 16/06/2026
+- Apresentacao: 17/06/2026
 
 ## Grupo
 
 - Caio Fonseca
 - Eduardo Malheiros
 - Gabriel Belo
-- Jarbas
+- Jarbas Esteves
 
 ## Entregaveis
 
