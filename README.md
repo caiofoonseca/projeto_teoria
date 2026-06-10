@@ -37,10 +37,19 @@ O projeto usa:
 | Caminho | Descricao |
 | --- | --- |
 | `src/c/quicksort.c` | Implementacao do Quick Sort em C. |
+| `src/python/quicksort.py` | Implementacao do Quick Sort em Python. |
+| `src/c/benchmark.c` | Benchmark do Quick Sort em C. |
+| `src/python/benchmark.py` | Benchmark do Quick Sort em Python. |
 | `scripts/run_tests.py` | Script em Python para compilar e testar o programa em C. |
+| `scripts/run_benchmarks.py` | Executa os benchmarks e salva os resultados em CSV. |
+| `scripts/generate_plots.py` | Gera graficos a partir dos resultados. |
 | `examples/entrada.txt` | Exemplo de entrada. |
 | `examples/saida.txt` | Saida esperada para o exemplo. |
-| `docs/especificacao.md` | Espaco para registrar a especificacao completa do trabalho. |
+| `docs/especificacao.md` | Resumo da especificacao completa do trabalho. |
+| `docs/checklist_avaliacao.md` | Checklist dos requisitos para nota maxima. |
+| `docs/relatorio.md` | Base do relatorio final. |
+| `data/` | Pasta para resultados experimentais em CSV. |
+| `plots/` | Pasta para graficos gerados. |
 
 ## Formato de Entrada
 
@@ -79,23 +88,58 @@ Execucao usando o exemplo:
 
 No Windows, o executavel pode ficar como `build/quicksort.exe`.
 
+Execucao da versao em Python:
+
+```bash
+python src/python/quicksort.py < examples/entrada.txt
+```
+
 ## Como Rodar os Testes
 
 ```bash
 python scripts/run_tests.py
 ```
 
-O script compila o codigo em C com `gcc` e executa alguns casos de teste.
+O script executa os testes da versao em Python e tambem compila/testa a versao em C quando `gcc` esta instalado.
 
 Caso o comando informe que `gcc` nao foi encontrado, sera necessario instalar um compilador C antes de rodar a validacao automatica.
+
+## Como Rodar os Experimentos
+
+Para gerar os dados experimentais exigidos na especificacao:
+
+```bash
+python scripts/run_benchmarks.py
+```
+
+O resultado sera salvo em:
+
+```text
+data/resultados.csv
+```
+
+Para gerar os graficos:
+
+```bash
+python scripts/generate_plots.py
+```
+
+Esse comando depende da biblioteca `matplotlib`.
+
+## Observacao sobre Arquivos de Entrada e Saida
+
+A especificacao do projeto nao obriga, por si so, que o programa leia um arquivo chamado `entrada.txt` ou gere um arquivo chamado `saida.txt`.
+
+Neste repositorio, os arquivos em `examples/` servem como exemplos de execucao e validacao. O programa le pela entrada padrao, entao o usuario pode digitar os dados manualmente ou redirecionar um arquivo com `< examples/entrada.txt`.
 
 ## Proximos Passos
 
 - Ler e interpretar o arquivo de especificacoes do trabalho.
-- Ajustar o projeto ao formato de entrada e saida exigido pelo professor.
-- Adicionar comentarios teoricos sobre funcionamento, complexidade e casos do Quick Sort.
-- Preparar exemplos para a apresentacao.
-- Adicionar testes extras, se necessario.
+- Executar os benchmarks no computador usado na analise final.
+- Preencher o ambiente de execucao no relatorio.
+- Gerar tabelas e graficos finais.
+- Exportar o relatorio para PDF.
+- Preparar os slides da apresentacao.
 
 ## Repositorio
 

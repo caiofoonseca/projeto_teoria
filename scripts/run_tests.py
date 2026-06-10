@@ -1,10 +1,12 @@
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "src" / "c" / "quicksort.c"
+SOURCE_C = ROOT / "src" / "c" / "quicksort.c"
+SOURCE_PYTHON = ROOT / "src" / "python" / "quicksort.py"
 BUILD_DIR = ROOT / "build"
 EXECUTABLE = BUILD_DIR / "quicksort.exe"
 
@@ -17,15 +19,20 @@ TEST_CASES = [
 ]
 
 
-def compile_program() -> None:
+def compile_c_program() -> bool:
+    if shutil.which("gcc") is None:
+        print("[AVISO] gcc nao encontrado. Testes em C foram pulados.")
+        return False
+
     BUILD_DIR.mkdir(exist_ok=True)
-    command = ["gcc", str(SOURCE), "-Wall", "-Wextra", "-std=c11", "-o", str(EXECUTABLE)]
+    command = ["gcc", str(SOURCE_C), "-Wall", "-Wextra", "-std=c11", "-o", str(EXECUTABLE)]
     subprocess.run(command, check=True)
+    return True
 
 
-def run_case(name: str, input_data: str, expected_output: str) -> bool:
+def run_case(command: list[str], language: str, name: str, input_data: str, expected_output: str) -> bool:
     result = subprocess.run(
-        [str(EXECUTABLE)],
+        command,
         input=input_data,
         text=True,
         capture_output=True,
@@ -33,38 +40,46 @@ def run_case(name: str, input_data: str, expected_output: str) -> bool:
     )
 
     if result.returncode != 0:
-        print(f"[ERRO] {name}: programa retornou codigo {result.returncode}")
+        print(f"[ERRO] {language} - {name}: programa retornou codigo {result.returncode}")
         print(result.stderr)
         return False
 
     if result.stdout != expected_output:
-        print(f"[FALHA] {name}")
+        print(f"[FALHA] {language} - {name}")
         print(f"Esperado: {expected_output!r}")
         print(f"Obtido:   {result.stdout!r}")
         return False
 
-    print(f"[OK] {name}")
+    print(f"[OK] {language} - {name}")
     return True
 
 
-def main() -> int:
-    try:
-        compile_program()
-    except FileNotFoundError:
-        print("gcc nao encontrado. Instale um compilador C para rodar os testes.")
-        return 1
-    except subprocess.CalledProcessError as error:
-        print(f"Falha ao compilar o programa: {error}")
-        return 1
-
+def run_language_tests(language: str, command: list[str]) -> tuple[int, int]:
     passed = 0
     for name, input_data, expected_output in TEST_CASES:
-        if run_case(name, input_data, expected_output):
+        if run_case(command, language, name, input_data, expected_output):
             passed += 1
 
-    total = len(TEST_CASES)
-    print(f"\nResultado: {passed}/{total} testes passaram.")
-    return 0 if passed == total else 1
+    return passed, len(TEST_CASES)
+
+
+def main() -> int:
+    results: list[tuple[str, int, int]] = []
+
+    results.append(("Python", *run_language_tests("Python", [sys.executable, str(SOURCE_PYTHON)])))
+
+    try:
+        if compile_c_program():
+            results.append(("C", *run_language_tests("C", [str(EXECUTABLE)])))
+    except subprocess.CalledProcessError as error:
+        print(f"Falha ao compilar o programa em C: {error}")
+        return 1
+
+    print("\nResumo:")
+    for language, passed, total in results:
+        print(f"- {language}: {passed}/{total} testes passaram.")
+
+    return 0 if all(passed == total for _, passed, total in results) else 1
 
 
 if __name__ == "__main__":
