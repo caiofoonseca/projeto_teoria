@@ -69,10 +69,15 @@ Os experimentos devem ser executados com:
 
 Ambiente usado na execucao dos experimentos registrados em `data/resultados.csv`:
 
-- Processador: Intel64 Family 6 Model 165 Stepping 2, GenuineIntel
+- Computador: Dell Latitude 5511
+- Arquitetura: PC baseado em x64
+- Processador: Intel(R) Core(TM) i7-10850H CPU @ 2.70GHz
+- Nucleos: 6
 - Nucleos logicos informados pelo sistema: 12
-- Memoria RAM: preencher manualmente no computador usado para a entrega final
-- Sistema operacional: Microsoft Windows 10.0.19045.6466
+- Memoria RAM instalada: 32,0 GB
+- Memoria fisica total: 31,6 GB
+- Sistema operacional: Microsoft Windows 10 Pro
+- Versao do sistema operacional: 10.0.19045, compilacao 19045
 - Compilador C: gcc.exe 16.1.0, MSYS2 UCRT64
 - Python: 3.14.0
 - Biblioteca de graficos: matplotlib 3.10.9

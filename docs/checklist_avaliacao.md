@@ -15,7 +15,7 @@
 | Entradas pequena, media e grande | Feito | Foram usados 100, 1000 e 3000 elementos. |
 | Tabelas com tempos | Feito | Resultados salvos em `data/resultados.csv`. |
 | Graficos com curva teorica | Feito | Graficos gerados em `plots/`. |
-| Descricao de hardware | Em andamento | SO, nucleos logicos e identificador do processador foram coletados; RAM e modelo exato podem ser preenchidos manualmente. |
+| Descricao de hardware | Feito | Ambiente de execucao preenchido no relatorio com CPU, RAM, SO e modelo do notebook. |
 | Relatorio em PDF | Pendente | Base em Markdown criada; falta desenvolver e exportar para PDF. |
 | Slides | Pendente | Ainda precisam ser criados. |
 | Link do GitHub no relatorio/Classroom | Em andamento | README ja possui o link. |
