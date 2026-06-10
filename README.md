@@ -5,7 +5,7 @@ Repositorio do trabalho de Teoria da Computacao desenvolvido pelo grupo:
 - Caio Fonseca
 - Eduardo Malheiros
 - Gabriel Belo
-- Jarbas
+- Jarbas Esteves
 
 ## Tema
 
