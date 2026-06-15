@@ -15,7 +15,6 @@ Resumo da especificacao do projeto da disciplina de Teoria da Computacao.
 ## Grupo
 
 - Caio Fonseca
-- Eduardo Malheiros
 - Gabriel Belo
 - Jarbas Esteves
 
@@ -58,13 +57,3 @@ Resumo da especificacao do projeto da disciplina de Teoria da Computacao.
 - Eixo Y: tempo de execucao.
 - Plotar a curva da complexidade teorica esperada sobre os dados reais.
 - Usar escala logaritmica quando necessario.
-
-## Criterios de Avaliacao
-
-| Criterio | Peso |
-| --- | ---: |
-| Clareza e correcao teorica | 2.0 |
-| Analise de complexidade: melhor, pior e medio | 2.0 |
-| Experimentos praticos e graficos: aderencia e metodologia | 2.0 |
-| Codigo funcional e bem estruturado | 2.0 |
-| Apresentacao oral | 2.0 |

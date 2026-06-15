@@ -6,9 +6,8 @@
 - Professor: Daniel Bezerra
 - Grupo:
   - Caio Fonseca
-  - Eduardo Malheiros
   - Gabriel Belo
-  - Jarbas
+  - Jarbas Esteves
 - Algoritmo analisado: Quick Sort
 - Linguagens utilizadas: C e Python
 - Repositorio: <https://github.com/caiofoonseca/projeto_teoria.git>

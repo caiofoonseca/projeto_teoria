@@ -4,7 +4,7 @@
 
 | Requisito | Status | Observacao |
 | --- | --- | --- |
-| Equipe com 3 ou 4 integrantes | Feito | Grupo possui 4 integrantes. |
+| Equipe com 3 ou 4 integrantes | Feito | Grupo possui 3 integrantes. |
 | Duas linguagens distintas | Feito | C e Python. |
 | Implementacao do algoritmo | Feito | Quick Sort em C e Python. |
 | Codigo bem estruturado | Em andamento | Estrutura inicial criada; ainda pode receber comentarios e organizacao final. |
