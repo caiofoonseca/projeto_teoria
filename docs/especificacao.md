@@ -10,7 +10,7 @@ Resumo da especificacao do projeto da disciplina de Teoria da Computacao.
 - Algoritmo do grupo: Quick Sort
 - Linguagens escolhidas: C e Python
 - Entrega do projeto: 16/06/2026
-- Apresentacao: 17/06/2026
+- Apresentação: 17/06/2026
 
 ## Grupo
 

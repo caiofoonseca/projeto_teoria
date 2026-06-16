@@ -10,7 +10,6 @@
   - Jarbas Esteves
 - Algoritmo analisado: Quick Sort
 - Linguagens utilizadas: C e Python
-- Repositorio: <https://github.com/caiofoonseca/projeto_teoria.git>
 
 ## 2. Descricao do Algoritmo
 
