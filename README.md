@@ -144,7 +144,7 @@ plots/quicksort_c.png
 plots/quicksort_python.png
 ```
 
-## Observacao sobre Arquivos de Entrada e Saida
+## Observação sobre Arquivos de Entrada e Saida
 
 A especificação do projeto nao obriga, por si so, que o programa leia um arquivo chamado `entrada.txt` ou gere um arquivo chamado `saida.txt`.
 
