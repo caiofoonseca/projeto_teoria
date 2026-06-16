@@ -1,6 +1,6 @@
-# Projeto de Teoria da Computacao
+# Projeto de Teoria da Computação
 
-Repositorio do trabalho de Teoria da Computacao desenvolvido pelo grupo:
+Repositório do trabalho de Teoria da Computação desenvolvido pelo grupo:
 
 - Caio Fonseca
 - Gabriel Belo
@@ -8,7 +8,7 @@ Repositorio do trabalho de Teoria da Computacao desenvolvido pelo grupo:
 
 ## Tema
 
-O projeto tera como base o algoritmo **Quick Sort**, um algoritmo de ordenacao eficiente que utiliza a estratégia de divisão e conquista.
+O projeto terá como base o algoritmo **Quick Sort**, um algoritmo de ordenação eficiente que utiliza a estratégia de divisão e conquista.
 
 ## Algoritmo Escolhido: Quick Sort
 
@@ -22,7 +22,7 @@ Em média, o Quick Sort possui complexidade de tempo `O(n log n)`, mas pode cheg
 
 ## Objetivo do Projeto
 
-Implementar e analisar o funcionamento do Quick Sort conforme as especificações do trabalho, relacionando a implementacao com os conceitos estudados em Teoria da Computação.
+Implementar e analisar o funcionamento do Quick Sort conforme as especificações do trabalho, relacionando a implementação com os conceitos estudados em Teoria da Computação.
 
 ## Linguagens
 
@@ -64,7 +64,7 @@ Exemplo:
 8 3 1 7 0 10
 ```
 
-Saida:
+Saída:
 
 ```text
 0 1 3 7 8 10
@@ -111,7 +111,7 @@ Get-Content examples/entrada.txt | python src/python/quicksort.py
 python scripts/run_tests.py
 ```
 
-O script executa os testes da versao em Python e tambem compila/testa a versao em C quando `gcc` esta instalado.
+O script executa os testes da versao em Python e tambem compila/testa a versão em C quando `gcc` esta instalado.
 
 Caso o comando informe que `gcc` nao foi encontrado, sera necessário instalar um compilador C antes de rodar a validação automática.
 
@@ -146,7 +146,7 @@ plots/quicksort_python.png
 
 ## Observação sobre Arquivos de Entrada e Saida
 
-A especificação do projeto nao obriga, por si so, que o programa leia um arquivo chamado `entrada.txt` ou gere um arquivo chamado `saida.txt`.
+A especificação do projeto nao obriga, por si só, que o programa leia um arquivo chamado `entrada.txt` ou gere um arquivo chamado `saida.txt`.
 
 Neste repositorio, os arquivos em `examples/` servem como exemplos de execução e validação. O programa lê pela entrada padrão, então o usuário pode digitar os dados manualmente ou redirecionar um arquivo.
 
