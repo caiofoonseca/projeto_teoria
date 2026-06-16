@@ -8,54 +8,54 @@ Repositorio do trabalho de Teoria da Computacao desenvolvido pelo grupo:
 
 ## Tema
 
-O projeto tera como base o algoritmo **Quick Sort**, um algoritmo de ordenacao eficiente que utiliza a estrategia de divisao e conquista.
+O projeto tera como base o algoritmo **Quick Sort**, um algoritmo de ordenacao eficiente que utiliza a estratégia de divisão e conquista.
 
 ## Algoritmo Escolhido: Quick Sort
 
-O Quick Sort funciona escolhendo um elemento como pivo e reorganizando os demais elementos de forma que:
+O Quick Sort funciona escolhendo um elemento como pivô e reorganizando os demais elementos de forma que:
 
-- elementos menores ou iguais ao pivo fiquem antes dele;
+- elementos menores ou iguais ao pivô fiquem antes dele;
 - elementos maiores fiquem depois dele;
 - o mesmo processo seja aplicado recursivamente as sublistas geradas.
 
-Em media, o Quick Sort possui complexidade de tempo `O(n log n)`, mas pode chegar a `O(n^2)` no pior caso, dependendo da escolha do pivo e da organizacao inicial dos dados.
+Em média, o Quick Sort possui complexidade de tempo `O(n log n)`, mas pode chegar a `O(n^2)` no pior caso, dependendo da escolha do pivô e da organização inicial dos dados.
 
 ## Objetivo do Projeto
 
-Implementar e analisar o funcionamento do Quick Sort conforme as especificacoes do trabalho, relacionando a implementacao com os conceitos estudados em Teoria da Computacao.
+Implementar e analisar o funcionamento do Quick Sort conforme as especificações do trabalho, relacionando a implementacao com os conceitos estudados em Teoria da Computação.
 
 ## Linguagens
 
 O projeto usa:
 
-- **C** para a implementacao principal do Quick Sort.
-- **Python** para automatizar testes e facilitar a validacao dos resultados.
+- **C** para a implementação principal do Quick Sort.
+- **Python** para automatizar testes e facilitar a validação dos resultados.
 
 ## Estrutura do Projeto
 
 | Caminho | Descricao |
 | --- | --- |
-| `src/c/quicksort.c` | Implementacao do Quick Sort em C. |
-| `src/python/quicksort.py` | Implementacao do Quick Sort em Python. |
+| `src/c/quicksort.c` | Implementação do Quick Sort em C. |
+| `src/python/quicksort.py` | Implementação do Quick Sort em Python. |
 | `src/c/benchmark.c` | Benchmark do Quick Sort em C. |
 | `src/python/benchmark.py` | Benchmark do Quick Sort em Python. |
 | `scripts/run_tests.py` | Script em Python para compilar e testar o programa em C. |
 | `scripts/run_benchmarks.py` | Executa os benchmarks e salva os resultados em CSV. |
-| `scripts/generate_plots.py` | Gera graficos a partir dos resultados. |
+| `scripts/generate_plots.py` | Gera gráficos a partir dos resultados. |
 | `examples/entrada.txt` | Exemplo de entrada. |
 | `examples/saida.txt` | Saida esperada para o exemplo. |
-| `docs/especificacao.md` | Resumo da especificacao completa do trabalho. |
-| `docs/checklist_avaliacao.md` | Checklist dos requisitos para nota maxima. |
+| `docs/especificacao.md` | Resumo da especificação completa do trabalho. |
+| `docs/checklist_avaliacao.md` | Checklist dos requisitos para nota máxima. |
 | `docs/relatorio.md` | Base do relatorio final. |
 | `data/resultados.csv` | Resultados experimentais coletados. |
-| `plots/` | Graficos gerados a partir dos resultados. |
+| `plots/` | Gráficos gerados a partir dos resultados. |
 
 ## Formato de Entrada
 
 O programa em C espera:
 
-1. Um numero inteiro `n`, indicando a quantidade de elementos.
-2. `n` numeros inteiros que serao ordenados.
+1. Um número inteiro `n`, indicando a quantidade de elementos.
+2. `n` números inteiros que serão ordenados.
 
 Exemplo:
 
@@ -72,34 +72,34 @@ Saida:
 
 ## Como Compilar e Executar
 
-Compilacao manual:
+Compilação manual:
 
 ```bash
 mkdir build
 gcc src/c/quicksort.c -Wall -Wextra -std=c11 -o build/quicksort
 ```
 
-Execucao usando o exemplo em Bash, Git Bash ou MSYS2:
+Execução usando o exemplo em Bash, Git Bash ou MSYS2:
 
 ```bash
 ./build/quicksort < examples/entrada.txt
 ```
 
-No Windows, o executavel pode ficar como `build/quicksort.exe`.
+No Windows, o executável pode ficar como `build/quicksort.exe`.
 
-Execucao usando o exemplo no PowerShell:
+Execução usando o exemplo no PowerShell:
 
 ```powershell
 Get-Content examples/entrada.txt | .\build\quicksort.exe
 ```
 
-Execucao da versao em Python:
+Execução da versao em Python:
 
 ```bash
 python src/python/quicksort.py < examples/entrada.txt
 ```
 
-No PowerShell, a versao Python tambem pode ser executada assim:
+No PowerShell, a versao Python também pode ser executada assim:
 
 ```powershell
 Get-Content examples/entrada.txt | python src/python/quicksort.py
@@ -113,23 +113,23 @@ python scripts/run_tests.py
 
 O script executa os testes da versao em Python e tambem compila/testa a versao em C quando `gcc` esta instalado.
 
-Caso o comando informe que `gcc` nao foi encontrado, sera necessario instalar um compilador C antes de rodar a validacao automatica.
+Caso o comando informe que `gcc` nao foi encontrado, sera necessário instalar um compilador C antes de rodar a validação automática.
 
 ## Como Rodar os Experimentos
 
-Para gerar os dados experimentais exigidos na especificacao:
+Para gerar os dados experimentais exigidos na especificação:
 
 ```bash
 python scripts/run_benchmarks.py
 ```
 
-O resultado sera salvo em:
+O resultado será salvo em:
 
 ```text
 data/resultados.csv
 ```
 
-Para gerar os graficos:
+Para gerar os gráficos:
 
 ```bash
 python scripts/generate_plots.py
@@ -137,7 +137,7 @@ python scripts/generate_plots.py
 
 Esse comando depende da biblioteca `matplotlib`.
 
-Os graficos gerados ficam em:
+Os gráficos gerados ficam em:
 
 ```text
 plots/quicksort_c.png
@@ -146,9 +146,9 @@ plots/quicksort_python.png
 
 ## Observacao sobre Arquivos de Entrada e Saida
 
-A especificacao do projeto nao obriga, por si so, que o programa leia um arquivo chamado `entrada.txt` ou gere um arquivo chamado `saida.txt`.
+A especificação do projeto nao obriga, por si so, que o programa leia um arquivo chamado `entrada.txt` ou gere um arquivo chamado `saida.txt`.
 
-Neste repositorio, os arquivos em `examples/` servem como exemplos de execucao e validacao. O programa le pela entrada padrao, entao o usuario pode digitar os dados manualmente ou redirecionar um arquivo.
+Neste repositorio, os arquivos em `examples/` servem como exemplos de execução e validação. O programa lê pela entrada padrão, então o usuário pode digitar os dados manualmente ou redirecionar um arquivo.
 
 Em Bash, Git Bash ou MSYS2:
 
