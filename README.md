@@ -161,18 +161,3 @@ Em PowerShell:
 ```powershell
 Get-Content examples/entrada.txt | .\build\quicksort.exe
 ```
-
-## Proximos Passos
-
-- Ler e interpretar o arquivo de especificacoes do trabalho.
-- Executar os benchmarks no computador usado na analise final.
-- Preencher o ambiente de execucao no relatorio.
-- Gerar tabelas e graficos finais.
-- Exportar o relatorio para PDF.
-- Preparar os slides da apresentacao.
-
-## Repositorio
-
-Este projeto sera versionado no GitHub:
-
-<https://github.com/caiofoonseca/projeto_teoria.git>
